@@ -18,3 +18,6 @@ class TestHighestNumberFinder(unittest.TestCase):
         cut.find_highest_number(input_value)
 
         self.assertEqual(actual_result, expected_result)
+
+if __name__ == '__main__':
+    unittest.main()
