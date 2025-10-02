@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# Author: DCameron
+# Author: Nikhil Ahlawat
 # Description: This module defines a Class of Tank
 """
     Tank Class for a Game of Tanks
@@ -46,6 +46,18 @@ class Tank:
     def __add__(self, other):
         return self._health + other._health
 
+    # Example of DUCK TYPING - my Tank can now QUACK like a str!
+    def __str__(self):
+        return f"Model={self.model}, health={self._health}, speed={self._speed}"
 
+    # Example of GETTER and SETTER methods..
+    def get_health(self):
+        return self._health
 
+    def set_health(self, new_health):
+        self._health = new_health
+        return None
 
+    # Wrap the getter and setter methods with ONE VARIABLE name
+    # interface
+    tank_health = property(get_health, set_health)
